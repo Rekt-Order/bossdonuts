@@ -1,5 +1,7 @@
 # Boss Donuts Media Asset Hub
 
+![Boss Donuts Media Asset Hub イメージ](https://miuradonuts.com/git/git_image.png)
+
 ## 1. 概要
 
 このリポジトリは、クリエイターブランド「みうらドーナツ」およびNFTプロジェクト「ドーナツ部長」双方を包括的にサポートする公式メディア資産管理および戦略共有ハブです。ロゴ、キャラクターアート、NFT関連画像、商品デザイン、公式ドキュメント、ポッドキャスト素材、ブログ用画像など、プロジェクトに関連する全ての承認済みメディア資産を一元的に集約し、「信頼できる唯一の情報源 (Single Source of Truth)」としての役割を担います。
