@@ -6,7 +6,7 @@
 
 もしこの `2024-01.html` ファイルをGitHub Pagesなどで公開設定された場合は、以下にそのURLを記載できます。
 
-* [ドーナツ部長・活動報告【IR】2024年1月度](ここに公開したHTMLファイルへのURLを挿入)
+* [ドーナツ部長・活動報告【IR】2024年1月度](https://rekt-order.github.io/bossdonuts/archive_historical_documents/activity_reports_archive/2024-01/2024-01.html)
 
 ## 運営の透明化について
 
