@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ドーナツ部長・活動報告【IR】2023年8月度</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .report-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .section {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border-radius: 4px;
+            background-color: #fff;
+            border-left: 4px solid #60a5fa;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e5e7eb;
+            color: #2563eb;
+        }
+        
+        .header {
+            background-color: #1e40af;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+        
+        .metadata {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            font-family: monospace;
+        }
+        
+        .metadata-item {
+            margin-bottom: 0.5rem;
+        }
+        
+        .stats {
+            background-color: #f0f9ff;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+        
+        .chart-container {
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            height: 300px;
+        }
+        
+        .progress {
+            height: 20px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+            background-color: #e9ecef;
+            border-radius: .25rem;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            color: white;
+            text-align: center;
+            background-color: #4f46e5;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        
+        table, th, td {
+            border: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background-color: #f3f4f6;
+            padding: 0.75rem;
+            text-align: left;
+        }
+        
+        td {
+            padding: 0.75rem;
+        }
+        
+        .compare-table td:nth-child(1) {
+            width: 33%;
+            font-weight: 500;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background-color: #dbeafe;
+            color: #1e40af;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .news-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+        }
+        
+        .highlight {
+            background-color: #fef3c7;
+            padding: 0.125rem 0.25rem;
+            border-radius: 2px;
+        }
+        
+        .code-block {
+            background-color: #f3f4f6;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .commit-header {
+            font-family: monospace;
+            background-color: #f3f4f6;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <div class="commit-header">
+            Rekt-Order / bossdonuts / archive_historical_documents / activity_reports_archive main<br>
+            commit-2023-08-31
+        </div>
+        
+        <div class="header">
+            <div class="text-sm text-gray-300">DOCUMENT</div>
+            <div class="text-lg font-semibold">IR-REPORT-2023-08-31</div>
+            <h1 class="text-3xl font-bold mt-4 mb-2">ドーナツ部長・活動報告【IR】</h1>
+            <h2 class="text-2xl font-semibold mb-4">2023年8月度</h2>
+            <p class="text-md">NFTプロジェクト「ドーナツ部長」および「ぬるぺでぃあ」の活動内容・収支・成果・課題の透明な報告書</p>
+        </div>
+        
+        <div class="metadata">
+            <div class="metadata-item"><span class="text-gray-500">## 発行日</span> 2023-08-31</div>
+            <div class="metadata-item"><span class="text-gray-500">## 報告期間</span> 2023-08-01 ~ 2023-08-31</div>
+            <div class="metadata-item"><span class="text-gray-500">## 作成者</span> みうらドーナツ</div>
+            <div class="metadata-item"><span class="text-gray-500">## ドキュメントタイプ</span> 活動報告書</div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-info-circle mr-2"></i>運営の透明化について
+            </h2>
+            <p class="mb-4">
+                NFTプロジェクトには、大きな利益を生んでいる（経営的に成功している）プロジェクトもあれば、個人で細々と継続しているプロジェクトもあります。私が運営する「ドーナツ部長」のプロジェクトは、今は後者よりのプロジェクトと言えるでしょう。
+            </p>
+            <p class="mb-4">
+                売り上げや二次流通量がオンチェーンで一般公開されているので、プロジェクトの取引状況は、実は誰でも知ることができます。しかし、「ドーナツ部長」を通してNFTとブロックチェーンの技術を広めたいと考える私にとって、「オンチェーンの情報を見てね」と言うだけでは、少し不誠実なように感じてしまうのです（これは、あくまで私自身のプロジェクトについての考えです）。
+            </p>
+            <p>
+                そこで、毎月の活動報告を本サイトで行うことに決めました。企業で言うところの「IR」のようなものとお考えください。「ドーナツ部長」に関する活動、そして本サイト「ぬるぺでぃあ」に関する活動と成果を公開していきます。
+            </p>
+            
+            <div class="bg-blue-50 p-4 rounded-lg mt-4">
+                <h3 class="font-semibold text-blue-700 mb-2">なぜ、活動報告を行うのか？</h3>
+                <p class="mb-3">皆さんへ活動報告を開示する目的は、大きく2つあります。</p>
+                <ol class="list-decimal pl-5 mb-4">
+                    <li class="mb-2">毎月の活動や成果を皆さんへ報告することで、活動がよりアクティブなものになると考えています。「しつもん箱」や「Discord」内での感想や意見を取り入れることで、活動を双方向なものへとシフトしていくことが、長期的な目標です。また自分にプレッシャーをかけることも、ウラの目的として存在しています。</li>
+                    <li>レポートは、運営とホルダーとを繋ぐアイテム（信頼を表すもの）として機能すると考えています。レポートには分析などを織り交ぜ、独自の解釈と考察を入れるようにする予定です。レポートのコア（考察や分析部分）はいずれ、限定公開へと切り替えられ、部長ホルダー様だけに全容が公開される日がやってきます。</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-chart-line mr-2"></i>2023.8月度 活動内容
+            </h2>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">ドーナツ部長PJの活動</h3>
+            
+            <div class="stats mb-5">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-white rounded shadow p-3">
+                        <div class="text-sm text-gray-500">作品制作</div>
+                        <div class="text-xl font-semibold">2点</div>
+                        <div class="text-xs text-gray-600">「Wearable Donuts」部長／LINEスタンプ原画／お盆用ミーム</div>
+                    </div>
+                    <div class="bg-white rounded shadow p-3">
+                        <div class="text-sm text-gray-500">新作リリース</div>
+                        <div class="text-xl font-semibold">2点</div>
+                    </div>
+                    <div class="bg-white rounded shadow p-3">
+                        <div class="text-sm text-gray-500">LINEスタンプ原画コレクション</div>
+                        <div class="text-xl font-semibold">6点</div>
+                        <div class="text-xs text-blue-600">
+                            <a href="https://opensea.io/collection/rights-and-donuts" target="_blank">
+                                https://opensea.io/collection/rights-and-donuts
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>項目</th>
+                        <th>実績</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Twitterスペース</td>
+                        <td>0回</td>
+                    </tr>
+                    <tr>
+                        <td>StandFMでの配信</td>
+                        <td>1回（#43）</td>
+                    </tr>
+                    <tr>
+                        <td>「レシートのNFT」の使い道</td>
+                        <td>+1個（手帳リフィルのテンプレート配布）</td>
+                    </tr>
+                    <tr>
+                        <td>その他の活動</td>
+                        <td>
+                            - 第三次リブランディング計画を策定（Discordにて公開予定）<br>
+                            - Deworkの調査（PJの進行スピードを上げたい）
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="font-semibold text-lg mb-3 mt-5 text-indigo-700">サイト「ぬるぺでぃあ」の成績（2023年8月度の月間数値）</h3>
+            
+            <div class="flex justify-center mb-4">
+                <img src="https://i0.wp.com/miuradonuts.com/wp-content/uploads/2023/08/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A-1.png?resize=817%2C1347&ssl=1" alt="サイト「ぬるぺでぃあ」の成績" class="max-w-full h-auto rounded shadow" />
+            </div>
+            
+            <p class="mb-3">レポートの詳細は、下記URLでも公開しています。</p>
+            <div class="code-block">
+                <a href="https://lookerstudio.google.com/reporting/cf54dd70-e940-4294-aa3d-0979a36ad59d" target="_blank">
+                    https://lookerstudio.google.com/reporting/cf54dd70-e940-4294-aa3d-0979a36ad59d
+                </a>
+            </div>
+            
+            <div class="mt-4">
+                <div class="tag"><i class="fas fa-file-alt mr-1"></i>記事投稿数：10本</div>
+                <div class="tag"><i class="fas fa-paint-brush mr-1"></i>サイトの構成とデザインの変更を実施</div>
+            </div>
+            
+            <h3 class="font-semibold text-lg mb-3 mt-5 text-indigo-700">プロトタイプ／プロダクト</h3>
+            <ul class="list-disc pl-5 mb-4">
+                <li class="mb-2">販路拡大として、Baseショップの立ち上げとメルカリでの法人ショップを開設</li>
+                <li class="mb-2">Webアプリを活用した書き込み型のダイナミックNFTを開発中</li>
+                <li>先月依頼のあったOrdinals での作品制作を進行中</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-money-bill-wave mr-2"></i>2023.8月度 収支について
+            </h2>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">コレクションの売り上げ</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>コレクション</th>
+                        <th>取引件数</th>
+                        <th>売上</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Wearable DONUTS</td>
+                        <td>0件</td>
+                        <td>0 ETH</td>
+                    </tr>
+                    <tr>
+                        <td>LINEスタンプ原画 NFT</td>
+                        <td>2件</td>
+                        <td>0.03 ETH</td>
+                    </tr>
+                    <tr>
+                        <td>2071年のドーナツ部長</td>
+                        <td>0件</td>
+                        <td>0 ETH</td>
+                    </tr>
+                    <tr>
+                        <td>Ordinals作品</td>
+                        <td>0件</td>
+                        <td>0 BTC</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3 class="font-semibold text-lg mb-3 mt-5 text-indigo-700">グッズの売り上げ</h3>
+            <p>実績なし</p>
+            
+            <h3 class="font-semibold text-lg mb-3 mt-5 text-indigo-700">プロダクト／サービスでのマネタイズ</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>商品/サービス</th>
+                        <th>取引件数</th>
+                        <th>売上</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Googleアナリティクスの自動レポートのテンプレート</td>
+                        <td>1件</td>
+                        <td>2,000円</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="chart-container mt-5">
+                <canvas id="salesChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-calendar-alt mr-2"></i>次月の活動計画
+            </h2>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">ドーナツ部長PJの次月計画</h3>
+            <div class="bg-gray-50 p-4 rounded border-l-4 border-blue-500 mb-4">
+                <ul class="list-disc pl-5">
+                    <li class="mb-2">ドーナツ部長のLINEスタンプ第二弾リリース（原画をNFTとして販売）</li>
+                    <li class="mb-2">LINEスタンプ申請&公開</li>
+                    <li class="mb-2">ドーナツ部長の新作をリリース</li>
+                    <li class="mb-2">ドーナツ部長の新PJ（ジェネラティブ）のホワイトペーパーの公開（発売延期の広報）</li>
+                    <li>営業活動への注力（Y社への企画書提案）</li>
+                </ul>
+            </div>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">サイト「ぬるぺでぃあ」の次月企画</h3>
+            <div class="bg-gray-50 p-4 rounded border-l-4 border-green-500 mb-4">
+                <ul class="list-disc pl-5">
+                    <li class="mb-2">ChatGPT関連の試作記事を公開</li>
+                    <li>トークンゲートを使った限定公開記事の試作</li>
+                </ul>
+            </div>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">プロトタイプ／プロダクト</h3>
+            <div class="bg-gray-50 p-4 rounded border-l-4 border-purple-500">
+                <ul class="list-disc pl-5">
+                    <li>部長のシューティングゲームのデータ販売</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-newspaper mr-2"></i>NEWS
+            </h2>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">トピックス</h3>
+            <div class="news-item">
+                <h4 class="font-medium"><i class="fas fa-trophy text-yellow-500 mr-1"></i> ドーナツ部長がクレーンゲームのNFT景品として登場予定</h4>
+                <p class="text-sm text-gray-600">2071年のドーナツ部長が景品に選定されました</p>
+            </div>
+            <div class="news-item">
+                <h4 class="font-medium"><i class="fas fa-handshake text-green-500 mr-1"></i> LINE NFT周辺企業との打ち合わせを実施</h4>
+                <p class="text-sm text-gray-600">新たな連携の可能性を模索中</p>
+            </div>
+            <div class="news-item">
+                <h4 class="font-medium"><i class="fas fa-shopping-bag text-purple-500 mr-1"></i> ドーナツ部長のグッズの調整</h4>
+                <p class="text-sm text-gray-600">実物グッズの製造・販売に向けた準備を進行中</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">
+                <i class="fas fa-lightbulb mr-2"></i>良かったこと／手ごたえ
+            </h2>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">ドーナツ部長について</h3>
+            <div class="bg-gray-50 p-4 rounded mb-5">
+                <p class="mb-3">
+                    LINEスタンプの原画をNFTとして販売スタートし、2件で成約した。市況としてもNFTが売れにくくなっているため、作品を制作してリリースするだけでは、長期的な継続は困難と考えている。まだ叩き台ではあるものの、策定した第三次リブランディング計画によって、NFTのみに頼らない活動へ広げることを検討している。
+                </p>
+                <p class="mb-3">
+                    当初は9月にリリース予定だった部長の新プロジェクト（ジェネ）については、正式アナウンスはまだしていないが、延期を決定している。理由としては、現在のNFT市況も若干は影響しているが、部長の新プロジェクトとして表現したいものが、当初の構想では陳腐化してしまうと考えたことが大きい。つまり、今の仕様のまま販売しても、私自身がつまらないと感じるようになってしまったことが、大きく関係している。ダイナミックな変化の採用は変えずに、販売方法や現実生活との絡みをもう少し検討したい。
+                </p>
+                <p>
+                    また、過去にも何度か感じることはあったが、プロジェクトの進行速度に課題を感じている。そのたびに何度も立て直しを図ったが、運営１人では、これ以上の負荷をかけて活動を加速させるのは、到底厳しい。Deworkなどの分散型ツールを活用ができないか、関わる人を増やすことはできないかについても真剣に考えたい。
+                </p>
+            </div>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">ぬるぺでぃあについて</h3>
+            <div class="bg-gray-50 p-4 rounded mb-5">
+                <p>
+                    記事量の担保とCVが安定してきたこともあり、毎日投稿は停止。記事の「量」から、反響のいいテーマやニーズに合った記事を提供する形へとシフトしようと考えた。今月はその取り組みの初月だったが、記事本数は10本、CVやクエリでのインプレッションが平均で1.2倍ほどに改善した。NFT関連の反響は落ちているものの、GPTと絡めた記事の反響が急増しているので、生成AIと部長を絡めた記事を増やしていきたいと考えている。
+                </p>
+            </div>
+            
+            <h3 class="font-semibold text-lg mb-3 text-indigo-700">その他</h3>
+            <div class="bg-gray-50 p-4 rounded">
+                <p class="mb-3">
+                    X（旧Twitter）にて、直近90日間でのインプレッション総数500万を達成し、収益化のバーをクリア。期間中の発信については、いわゆる「クソリプ」にならないように留意した。NFT関連ではない方との絡みが増えたことで、以下の気づきを得た。
+                </p>
+                <ul class="list-disc pl-5 mb-3">
+                    <li class="mb-2">NFT関連のアカウントは優しい方（無意味な衝突を避ける方）が多いせいか、居心地が良いと感じる。一方で、NFTとは無縁の方（普段絡みがない方）とリプで交流することで、発信の仕方や表現方法を考えるきっかけとなった。</li>
+                    <li class="mb-2">Xのアルゴリズムを理解することができた。</li>
+                    <li>GIF画像や動画と組み合わせて、反応がいいTweet（大喜利的な考え方）を設計するヒントを得ることができた。</li>
+                </ul>
+                
+                <div class="mb-4">
+                    <h4 class="font-medium text-gray-700 mb-2">プロフィール変更</h4>
+                    <div class="bg-white p-3 rounded border mb-3">
+                        <div class="text-sm text-gray-500 mb-1">【変更前】</div>
+                        「ドーナツ部長」クリエイター｜「ドーナツ部長」総取引量12ETH！｜情報サイト「ぬるぺでいあ」管理人｜ドーナツ部長はジェラティブコレクションへと移行（予定）！｜StandFM 「ドーナツ部長のホールナイトニッポン」放送中｜問い合わせは…コチラから → http://miuradonuts.com/contact/
+                    </div>
+                    <div class="bg-white p-3 rounded border">
+                        <div class="text-sm text-gray-500 mb-1">【変更後】</div>
+                        【ある朝、部長が目を覚ますと、ドーナツがハマっていました】ドーナツとの共同生活を送る部長「ドーナツ部長」のクリエイターです｜本業では SEを継続中｜自分の理想の上司を描いたら、こんな部長が生まれました！｜StandFM 「ドーナツ部長のホールナイトニッポン」配信｜部長グッズとデジタルアバターを販売中です
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 Miura Donuts | ドーナツ部長</p>
+            <p class="text-xs mt-2">Page 1 / 1</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 収支グラフの描画
+            var ctx = document.getElementById('salesChart').getContext('2d');
+            var salesChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['7月', '8月'],
+                    datasets: [
+                        {
+                            label: 'NFT売上(ETH換算)',
+                            data: [0.01, 0.03],
+                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                            borderColor: 'rgba(54, 162, 235, 1)',
+                            borderWidth: 1
+                        },
+                        {
+                            label: 'その他売上(円)',
+                            data: [0, 2000],
+                            backgroundColor: 'rgba(255, 206, 86, 0.5)',
+                            borderColor: 'rgba(255, 206, 86, 1)',
+                            borderWidth: 1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: '金額'
+                            }
+                        }
+                    },
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: '2023年7-8月 売上推移'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    var label = context.dataset.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.datasetIndex === 0) {
+                                        label += context.raw + ' ETH';
+                                    } else {
+                                        label += context.raw + ' 円';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
