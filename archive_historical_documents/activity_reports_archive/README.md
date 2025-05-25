@@ -22,7 +22,7 @@
 
 * **2023年 年次報告**
     * 概要と詳細レポート: [ `./2023-annual/` ](./2023-annual/)
-    * 公開HTMLレポート: [ドーナツ部長・活動報告【IR】2023年年次レポート](https://rekt-order.github.io/bossdonuts/archive_historical_documents/activity_reports_archive/2023-annual/2023-all.html)
+    * 公開HTMLレポート: [ドーナツ部長・活動報告【IR】2023年年次レポート](https://rekt-order.github.io/bossdonuts/archive_historical_documents/activity_reports_archive/2023-all/2023-all.html)
 
 * **2023年12月度**
     * 概要と詳細レポート: [ `./2023-12/` ](./2023-12/)
